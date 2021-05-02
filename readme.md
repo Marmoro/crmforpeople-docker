@@ -11,6 +11,11 @@ docker rm $(docker ps -a -q)
 docker rmi $(docker images -q)
 ```
 
+### Create Docker network
+```bash
+docker network create --gateway 172.16.18.1 --subnet 172.16.18.0/24 cfp_net
+```
+
 ### Run docker-compose
 ```bash
 docker-compose --env-file ./conf/.env up
